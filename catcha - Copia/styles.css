@@ -1005,3 +1005,95 @@ body {
   }
 }
 
+
+/* ================= Apple glassmorphism layer ================= */
+:root{
+  --glass-bg: rgba(20,22,28,.55);
+  --glass-bg-strong: rgba(28,32,40,.6);
+  --glass-border: rgba(255,255,255,.12);
+  --glass-highlight: inset 0 1px 0 rgba(255,255,255,.14);
+  --glass-blur: blur(24px) saturate(160%);
+  --glass-shadow: 0 20px 60px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,255,255,.12);
+}
+
+/* Ambient aurora behind everything (visible through glass) */
+body:before{
+  content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background:
+    radial-gradient(ellipse 55% 40% at 12% 8%, rgba(115,255,224,.10), transparent 60%),
+    radial-gradient(ellipse 50% 45% at 88% 78%, rgba(150,130,255,.10), transparent 62%),
+    radial-gradient(ellipse 60% 40% at 55% 40%, rgba(80,120,255,.07), transparent 65%);
+}
+
+/* Frosted surfaces */
+.site-header{
+  background:rgba(9,11,17,.55)!important;
+  backdrop-filter:var(--glass-blur)!important;
+  -webkit-backdrop-filter:var(--glass-blur)!important;
+  border-bottom:1px solid rgba(255,255,255,.10)!important;
+}
+.announcement{
+  background:rgba(255,255,255,.04)!important;
+  backdrop-filter:var(--glass-blur);-webkit-backdrop-filter:var(--glass-blur);
+}
+.business-card,.tool-card,.saved-stat,.tool-company-panel{
+  background:var(--glass-bg)!important;
+  backdrop-filter:var(--glass-blur);-webkit-backdrop-filter:var(--glass-blur);
+  border:1px solid var(--glass-border)!important;
+  box-shadow:var(--glass-shadow)!important;
+}
+.business-card:hover,.tool-card:hover{
+  background:var(--glass-bg-strong)!important;
+  border-color:rgba(255,255,255,.22)!important;
+}
+.modal-card,.detail-contact,.art-note,.output-box{
+  background:var(--glass-bg-strong)!important;
+  backdrop-filter:var(--glass-blur);-webkit-backdrop-filter:var(--glass-blur);
+  border:1px solid var(--glass-border)!important;
+  box-shadow:var(--glass-shadow)!important;
+}
+.search-field,.select-field,.tool-company-select,
+.tool-card input,.tool-card select,.tool-card textarea,
+.form-grid input,.login-form>input{
+  background:rgba(255,255,255,.05)!important;
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  border:1px solid rgba(255,255,255,.12)!important;
+  border-radius:12px!important;
+}
+.search-field input,.select-field input{background:transparent!important;border:0!important}
+.search-field:focus-within,.select-field:focus-within{
+  background:rgba(255,255,255,.09)!important;
+  border-color:rgba(255,255,255,.3)!important;
+  box-shadow:0 0 0 4px rgba(255,255,255,.06)!important;
+}
+.saved-filters{background:rgba(255,255,255,.04)!important;backdrop-filter:var(--glass-blur);-webkit-backdrop-filter:var(--glass-blur);border:1px solid var(--glass-border)!important;border-radius:12px!important}
+.saved-filter.active{background:rgba(255,255,255,.10)!important;border-radius:9px}
+.saved-empty{background:rgba(255,255,255,.03)!important;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px dashed rgba(255,255,255,.18)!important}
+.stats-strip,.saved-toolbar,.data-notice,.closing-banner{
+  background:rgba(255,255,255,.035)!important;
+  backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  border:1px solid rgba(255,255,255,.08)!important;border-radius:14px!important;
+}
+.detail-top,.receipt-preview,.photo-attribution,.status-pill,.save-button,.signal{
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+}
+.detail-top{background:rgba(255,255,255,.06)!important;border:1px solid rgba(255,255,255,.14)!important}
+.photo-attribution{background:rgba(10,12,16,.6)!important;border:1px solid rgba(255,255,255,.16)!important;border-radius:8px!important}
+/* Pill / pill-like buttons: glass capsules */
+.login-button,.filter-button,.sort-button,.copy-output-button,.location-button{
+  background:rgba(255,255,255,.07)!important;
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border:1px solid rgba(255,255,255,.14)!important;border-radius:999px!important;
+  transition:background .25s ease,border-color .25s ease,transform .2s ease;
+}
+.login-button:hover,.filter-button:hover,.sort-button:hover,.copy-output-button:hover{background:rgba(255,255,255,.13)!important;border-color:rgba(255,255,255,.24)!important}
+.card-actions button,.action-contact,.action-later{
+  background:rgba(255,255,255,.06)!important;
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  border:1px solid rgba(255,255,255,.12)!important;border-radius:12px!important;
+}
+.action-contact.selected,.action-later.selected{background:#73ffe0!important;border-color:#73ffe0!important;color:#061318!important}
+.save-button{background:rgba(255,255,255,.08)!important;border:1px solid rgba(255,255,255,.14)!important}
+.save-button.is-saved{background:#73ffe0!important;color:#061318!important}
+/* Footer glass strip */
+.site-footer{background:rgba(7,9,15,.6)!important;backdrop-filter:var(--glass-blur);-webkit-backdrop-filter:var(--glass-blur);border-top:1px solid rgba(255,255,255,.08)!important}

@@ -39,3 +39,32 @@ button,input{font:inherit}
 .admin-footer{display:flex;justify-content:space-between;gap:18px;padding:16px 2px;color:#78869b;font-size:11px}
 a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid #ad8aff;outline-offset:3px}
 @media(max-width:600px){.admin-shell{width:calc(100% - 28px);padding-top:20px}.admin-intro{padding:36px 0 23px}.admin-panel{padding:22px 18px}.admin-footer{flex-direction:column;gap:5px}.user-row{align-items:flex-start;flex-wrap:wrap;gap:5px 12px}.user-source{margin-left:0}.user-row time{margin-left:auto}}
+
+/* ================= Apple glassmorphism layer ================= */
+body:before{
+  content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background:
+    radial-gradient(ellipse 50% 40% at 15% 8%, rgba(115,255,224,.08), transparent 60%),
+    radial-gradient(ellipse 45% 40% at 85% 80%, rgba(150,130,255,.08), transparent 62%);
+}
+.admin-panel{
+  background:rgba(18,22,32,.5)!important;
+  backdrop-filter:blur(24px) saturate(160%)!important;
+  -webkit-backdrop-filter:blur(24px) saturate(160%)!important;
+  border:1px solid rgba(255,255,255,.13)!important;
+  border-radius:18px!important;
+  box-shadow:0 20px 60px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,255,255,.14)!important;
+}
+.admin-panel input{
+  background:rgba(255,255,255,.05)!important;
+  border:1px solid rgba(255,255,255,.12)!important;border-radius:12px!important;
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+}
+.admin-panel input:focus{background:rgba(255,255,255,.09)!important;border-color:rgba(255,255,255,.3)!important;box-shadow:0 0 0 4px rgba(255,255,255,.06)!important}
+.user-row{
+  background:rgba(255,255,255,.05)!important;
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  border:1px solid rgba(255,255,255,.10)!important;border-radius:12px!important;
+}
+.submit-button{border-radius:999px!important}
+.brand-mark{border-radius:10px!important}
